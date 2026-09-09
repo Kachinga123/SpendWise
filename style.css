@@ -1,28 +1,180 @@
+```css
+/* General Page Styling */
 body {
     font-family: Arial, sans-serif;
-    margin: 40px;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-.tracker-header {
+
+/* Header */
+header {
     text-align: center;
-    font-size: 36px;
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+header img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+header h1 {
+    margin: 5px;
+}
+
+
+/* Sections */
+.add-expense-section,
+.expenses-section,
+.instructions,
+.multimedia {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Advanced Selector 1:
+   Direct child selector */
+.add-expense-section > form {
+    padding: 10px;
+}
+
+
+/* Inputs */
+input,
+select {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+/* Advanced Selector 2:
+   Negation pseudo-class */
+input:not([type="submit"]) {
+    background-color: #fafafa;
+}
+
+
+/* Advanced Selector 3:
+   Focus pseudo-class */
+input:focus,
+select:focus {
+    outline: 2px solid #555;
+    border-color: #333;
+}
+
+
+/* Button */
+button {
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+/* Button hover */
+button:hover {
+    background-color: #555;
+}
+
+
+/* Expense Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+
+/* Table cells */
+th,
+td {
+    border: 1px solid #aaa;
+    padding: 12px;
+    text-align: left;
+}
+
+
+/* Colored table header */
+thead {
+    background-color: #333;
+    color: white;
+}
+
+
+/* Advanced Selector 4:
+   Position pseudo-class */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/* Table row hover */
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+
+/* Advanced Selector 5:
+   Descendant selector */
+.expenses-section td {
+    font-size: 15px;
+}
+
+
+/* Details */
+details {
+    padding: 10px;
+}
+
+summary {
+    cursor: pointer;
     font-weight: bold;
 }
 
-#add-expense {
-    padding: 20px;
-    margin-top: 20px;
-    background-color: lightblue;
+
+/* YouTube Video */
+.multimedia {
+    text-align: center;
 }
 
-#your-expenses {
-    padding: 20px;
-    margin-top: 20px;
-    background-color: lightgreen;
+iframe {
+    max-width: 100%;
+    border-radius: 8px;
 }
 
-input {
-    display: block;
-    margin: 8px 0 15px 0;
-    padding: 8px;
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-color: white;
 }

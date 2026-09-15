@@ -1,0 +1,213 @@
+/* General Page Styling */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: #f4f7fb;
+    color: #333;
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+
+/* Header */
+header {
+    max-width: 900px;
+    margin: 0 auto 25px;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #dbe3ec;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+header img {
+    display: block;
+    margin: 0 auto 10px;
+}
+
+header h1 {
+    margin: 5px;
+    color: #123b6d;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+header p {
+    margin: 8px 0;
+}
+
+
+/* Sections */
+.add-expense-section,
+.expenses-section,
+.instructions,
+.multimedia {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: white;
+    border: 1px solid #dbe3ec;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Headings */
+h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2f80ed;
+    color: #123b6d;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* Advanced Selector 1: Direct Child Selector */
+.add-expense-section > form {
+    padding: 10px;
+}
+
+
+label {
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+
+/* Inputs and Select */
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 16px;
+}
+
+
+/* Advanced Selector 2: Negation Pseudo-class */
+input:not([type="submit"]) {
+    background-color: #fafafa;
+}
+
+
+/* Advanced Selector 3: Focus Pseudo-class */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2f80ed;
+}
+
+
+/* Button */
+button {
+    padding: 12px 18px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2f80ed;
+    color: white;
+    font-family: "Open Sans", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* Button Hover */
+button:hover {
+    background-color: #1c64c5;
+}
+
+
+/* Expense Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+
+/* Table Cells */
+th,
+td {
+    border: 1px solid #dbe3ec;
+    padding: 14px;
+    text-align: left;
+}
+
+
+/* Colored Table Header */
+thead {
+    background-color: #123b6d;
+    color: white;
+}
+
+
+/* Advanced Selector 4: Position Pseudo-class */
+tbody tr:nth-child(even) {
+    background-color: #f0f5fa;
+}
+
+
+/* Table Row Hover */
+tbody tr:hover {
+    background-color: #e3efff;
+}
+
+
+/* Advanced Selector 5: Descendant Selector */
+.expenses-section td {
+    font-size: 15px;
+}
+
+
+/* Details */
+details {
+    padding: 10px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #123b6d;
+}
+
+
+/* YouTube Video */
+.multimedia {
+    text-align: center;
+}
+
+iframe {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+
+/* Footer */
+footer {
+    max-width: 900px;
+    margin: 30px auto 0;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #dbe3ec;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@600;700&display=swap");

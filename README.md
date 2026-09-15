@@ -1,3 +1,4 @@
+@@ -0,0 +1,112 @@
 ````markdown
 # SpendWise - Budget Tracker
 
@@ -102,11 +103,9 @@ JavaScript can be added in future weeks to make the Add Expense button functiona
 
 ## Author
 
+
+## Author
+
 Nicholas Kachinga
 
-## Year
 
-2026
-
-```
-```

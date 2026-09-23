@@ -1,79 +1,349 @@
-/* General Page Styling */
+/* =========================================
+   GOOGLE FONTS
+========================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@600;700&display=swap");
+
+
+/* =========================================
+   CSS CUSTOM PROPERTIES
+========================================= */
+
+:root {
+    --brand-color: #123b6d;
+    --accent-color: #2f80ed;
+    --surface-color: #ffffff;
+    --background-color: #f4f7fb;
+    --primary-text: #333333;
+    --secondary-text: #64748b;
+    --border-color: #dbe3ec;
+}
+
+
+/* =========================================
+   GENERAL PAGE STYLING
+========================================= */
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    padding: 30px;
-    background-color: #f4f7fb;
-    color: #333;
+    background-color: var(--background-color);
+    color: var(--primary-text);
     font-family: "Open Sans", Arial, sans-serif;
 }
 
 
-/* Header */
-header {
-    max-width: 900px;
-    margin: 0 auto 25px;
+/* =========================================
+   MAIN DASHBOARD - CSS GRID
+========================================= */
+
+.dashboard {
+    min-height: 100vh;
+
+    /* CSS Grid for overall page layout */
+    display: grid;
+
+    grid-template-columns: 240px 1fr;
+}
+
+
+/* =========================================
+   SIDEBAR
+   FLEXBOX
+========================================= */
+
+.sidebar {
+    background-color: var(--brand-color);
+    color: white;
+
     padding: 25px;
-    background-color: white;
-    border: 1px solid #dbe3ec;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+
+/* Sidebar Logo */
+
+.sidebar-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-header img {
-    display: block;
-    margin: 0 auto 10px;
+.sidebar-logo img {
+    margin-bottom: 10px;
 }
 
-header h1 {
-    margin: 5px;
-    color: #123b6d;
-    font-family: "Poppins", Arial, sans-serif;
-}
-
-header p {
-    margin: 8px 0;
+.sidebar-logo h2 {
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: white;
 }
 
 
-/* Sections */
-.add-expense-section,
-.expenses-section,
-.instructions,
-.multimedia {
-    max-width: 900px;
-    margin: 20px auto;
-    padding: 25px;
-    background-color: white;
-    border: 1px solid #dbe3ec;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
+/* Navigation */
 
-
-/* Headings */
-h2 {
-    margin-top: 0;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #2f80ed;
-    color: #123b6d;
-    font-family: "Poppins", Arial, sans-serif;
-}
-
-
-/* Form */
-form {
+.navigation {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+.nav-item {
+    padding: 12px 15px;
 
-/* Advanced Selector 1: Direct Child Selector */
+    color: white;
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: background-color 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background-color: var(--accent-color);
+}
+
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.main-content {
+    padding: 30px;
+}
+
+
+/* =========================================
+   DASHBOARD HEADER
+   FLEXBOX
+========================================= */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--surface-color);
+
+    padding: 25px;
+    margin-bottom: 25px;
+
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.dashboard-header h1 {
+    margin: 0 0 8px;
+
+    color: var(--brand-color);
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+.dashboard-header p {
+    margin: 0 0 5px;
+    color: var(--secondary-text);
+}
+
+.user-info {
+    font-weight: 600;
+    color: var(--brand-color);
+}
+
+
+/* =========================================
+   DASHBOARD SUMMARY
+   FLEXBOX
+========================================= */
+
+.summary {
+    display: flex;
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.summary-item {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 20px;
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.summary-item span {
+    color: var(--secondary-text);
+}
+
+.summary-item strong {
+    color: var(--brand-color);
+    font-size: 22px;
+}
+
+
+/* =========================================
+   CATEGORY SECTION
+========================================= */
+
+.categories {
+    margin-bottom: 30px;
+}
+
+.categories h2 {
+    color: var(--brand-color);
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+
+/* =========================================
+   CATEGORY CARDS - CSS GRID
+========================================= */
+
+.card-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   CATEGORY CARD - FLEXBOX
+========================================= */
+
+.category-card {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    /* Micro-interaction */
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Hover + Keyboard Focus */
+
+.category-card:hover,
+.category-card:focus {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+
+    outline: none;
+}
+
+
+/* Card Content */
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.category-card h3 {
+    margin: 0;
+    color: var(--brand-color);
+}
+
+.category-card p {
+    margin: 0;
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+}
+
+.category-card > strong {
+    color: var(--accent-color);
+    font-size: 18px;
+}
+
+
+/* =========================================
+   EXISTING SECTIONS
+========================================= */
+
+.add-expense-section,
+.expenses-section,
+.instructions,
+.multimedia {
+    max-width: 100%;
+
+    margin: 20px 0;
+    padding: 25px;
+
+    background-color: var(--surface-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================
+   HEADINGS
+========================================= */
+
+h2 {
+    margin-top: 0;
+
+    padding-bottom: 10px;
+
+    border-bottom: 2px solid var(--accent-color);
+
+    color: var(--brand-color);
+
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+
+/* =========================================
+   FORM - FLEXBOX
+========================================= */
+
+form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* Direct Child Selector */
+
 .add-expense-section > form {
     padding: 10px;
 }
@@ -85,129 +355,244 @@ label {
 }
 
 
-/* Inputs and Select */
+/* =========================================
+   INPUTS AND SELECT
+========================================= */
+
 input,
 select {
     width: 100%;
+
     padding: 12px;
+
     border: 1px solid #cbd5e1;
+
     border-radius: 8px;
+
     font-family: "Open Sans", Arial, sans-serif;
+
     font-size: 16px;
 }
 
 
-/* Advanced Selector 2: Negation Pseudo-class */
+/* Negation Pseudo-class */
+
 input:not([type="submit"]) {
     background-color: #fafafa;
 }
 
 
-/* Advanced Selector 3: Focus Pseudo-class */
+/* Focus Pseudo-class */
+
 input:focus,
 select:focus {
     outline: none;
-    border-color: #2f80ed;
+
+    border-color: var(--accent-color);
 }
 
 
-/* Button */
+/* =========================================
+   BUTTON
+========================================= */
+
 button {
     padding: 12px 18px;
+
     margin-top: 10px;
+
     border: none;
+
     border-radius: 8px;
-    background-color: #2f80ed;
+
+    background-color: var(--accent-color);
+
     color: white;
+
     font-family: "Open Sans", Arial, sans-serif;
+
     font-size: 16px;
+
     font-weight: 600;
+
     cursor: pointer;
 }
 
 
-/* Button Hover */
 button:hover {
-    background-color: #1c64c5;
+    background-color: var(--brand-color);
 }
 
 
-/* Expense Table */
+/* =========================================
+   EXPENSE TABLE
+========================================= */
+
 table {
     width: 100%;
+
     border-collapse: collapse;
+
     margin-top: 15px;
 }
 
 
-/* Table Cells */
 th,
 td {
-    border: 1px solid #dbe3ec;
+    border: 1px solid var(--border-color);
+
     padding: 14px;
+
     text-align: left;
 }
 
 
-/* Colored Table Header */
 thead {
-    background-color: #123b6d;
+    background-color: var(--brand-color);
+
     color: white;
 }
 
 
-/* Advanced Selector 4: Position Pseudo-class */
+/* Position Pseudo-class */
+
 tbody tr:nth-child(even) {
     background-color: #f0f5fa;
 }
 
 
 /* Table Row Hover */
+
 tbody tr:hover {
     background-color: #e3efff;
 }
 
 
-/* Advanced Selector 5: Descendant Selector */
+/* Descendant Selector */
+
 .expenses-section td {
     font-size: 15px;
 }
 
 
-/* Details */
+/* =========================================
+   DETAILS
+========================================= */
+
 details {
     padding: 10px;
 }
 
 summary {
     cursor: pointer;
+
     font-weight: bold;
-    color: #123b6d;
+
+    color: var(--brand-color);
 }
 
 
-/* YouTube Video */
+/* =========================================
+   YOUTUBE VIDEO
+========================================= */
+
 .multimedia {
     text-align: center;
 }
 
 iframe {
     max-width: 100%;
+
     border-radius: 8px;
 }
 
 
-/* Footer */
+/* =========================================
+   FOOTER
+========================================= */
+
 footer {
-    max-width: 900px;
-    margin: 30px auto 0;
-    padding: 15px;
-    background-color: white;
-    border: 1px solid #dbe3ec;
-    border-radius: 10px;
+    margin-top: 30px;
+
+    padding: 20px;
+
     text-align: center;
+
+    color: var(--secondary-text);
 }
 
 
-/* Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Poppins:wght@600;700&display=swap");
+/* =========================================
+   RESPONSIVE DESIGN
+   BELOW 768px
+========================================= */
+
+@media (max-width: 767px) {
+
+    /* Single-column dashboard */
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Smaller sidebar */
+    .sidebar {
+        padding: 15px;
+    }
+
+
+    /* Navigation becomes horizontal */
+    .navigation {
+        flex-direction: row;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .main-content {
+        padding: 15px;
+    }
+
+
+    /* Header becomes single column */
+    .dashboard-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    /* Summary cards become one column */
+    .summary {
+        flex-direction: column;
+    }
+
+
+    /* Category cards become one column */
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   DARK THEME - STRETCH
+   ONLY CSS VARIABLES ARE OVERRIDDEN
+========================================= */
+
+@media (prefers-color-scheme: dark) {
+
+    :root {
+        --brand-color: #4f9cff;
+        --accent-color: #66aaff;
+        --surface-color: #1e293b;
+        --background-color: #0f172a;
+        --primary-text: #e2e8f0;
+        --secondary-text: #94a3b8;
+        --border-color: #334155;
+    }
+}
